@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    title Mi Aplicación
+    style
+      | body {
+      |   font-family: Arial, sans-serif;
+      |   background-color: #f1f1f1;
+      |   padding: 20px;
+      | }
+      | h1 {
+      |   color: #333;
+      | }
+      | h2 {
+      |   color: #666;
+      |   margin-top: 20px;
+      | }
+      | table {
+      |   width: 100%;
+      |   border-collapse: collapse;
+      |   margin-top: 20px;
+      | }
+      | th, td {
+      |   padding: 10px;
+      |   text-align: left;
+      |   border-bottom: 1px solid #ddd;
+      | }
+      | th {
+      |   background-color: #f2f2f2;
+      | }
+  body
+    h1 Mi Aplicación
+    h2 Agregar nuevo Alumno
+    form(action="/" method="POST")
+      input(type="text" name="nombre" placeholder="Ingrese nombre del alumno")
+      input(type="number" name="anio" placeholder="Ingrese el año")
+      input(type="text" name="curso" placeholder="Ingrese el curso")
+      button(type="submit") Agregar
+    h2 Datos existentes
+    table
+      thead
+        tr
+          th Nombre
+      tbody
+        each dato in datos
+          tr
+            td
+              a(href=`/notas/${dato.id}`)= dato.columna1
